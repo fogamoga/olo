@@ -1,0 +1,101 @@
+@use '../palette.scss' as variables;
+@use "sass:map";
+@use "sass:color";
+@import 'color-contrast';
+
+@mixin palette($map) {
+  :root {
+    @each $name, $value in $map {
+      --color-#{$name}: #{$value};
+
+      @if map.has-key($map, $name+'-hover') {
+
+      } @else {
+        @if $name == inherit {
+
+        } @else {
+          --color-#{$name}-hover: #{darken($value, 10%)};
+        }
+      }
+
+      @if map.has-key($map, $name+'-active') {
+
+      } @else {
+        @if $name == inherit {
+
+        } @else {
+          --color-#{$name}-active: #{darken($value, 14%)};
+        }
+      }
+
+    }
+  }
+
+  @each $name, $value in $map {
+
+    .color-static-#{$name} {
+      color: var(--color-#{$name});
+    }
+
+    .color-#{$name}-hover-only {
+
+      &:hover {
+        color: var(--color-#{$name}-hover);
+      }
+
+      &:active {
+        color: var(--color-#{$name}-active);
+      }
+    }
+
+    .color-#{$name} {
+      color: var(--color-#{$name});
+
+      &:hover {
+        color: var(--color-#{$name}-hover);
+      }
+
+      &:active {
+        color: var(--color-#{$name}-active);
+      }
+    }
+
+    .halo-color-#{$name} {
+      background-color: var(--color-#{$name});
+    }
+
+    .bg-color-#{$name} {
+      background-color: var(--color-#{$name});
+
+      &:hover {
+        background-color: var(--color-#{$name}-hover);
+      }
+    }
+
+    .bg-color-static-#{$name} {
+      background-color: var(--color-#{$name});
+    }
+
+    .border-color-#{$name} {
+      border-color: var(--color-#{$name});
+
+      &:hover {
+        border-color: var(--color-#{$name}-hover);
+      }
+    }
+
+    @if $name != inherit {
+      .color-#{$name}-contrast {
+        color: choose-contrast-color($value);
+
+        &:hover {
+          color: lighten(choose-contrast-color($value), 8%);
+        }
+
+      }
+    }
+  }
+}
+
+@include palette(variables.$palette);
+

@@ -1,0 +1,103 @@
+@mixin h1 {
+  font-size: 70px;
+  line-height: 84px;
+}
+
+@mixin h2 {
+  font-size: 64px;
+  line-height: 70px;
+}
+
+@mixin h3 {
+  font-size: 48px;
+  line-height: 60px;
+}
+
+@mixin h4 {
+  font-size: 42px;
+  line-height: 54px;
+}
+
+@mixin h5 {
+  font-size: 38px;
+  line-height: 46px;
+}
+
+@mixin h6 {
+  font-size: 36px;
+  line-height: 46px;
+}
+
+@mixin h7 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin p1 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+@mixin p2 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin p3 {
+  font-size: 19px;
+  line-height: 26px;
+}
+
+@mixin p4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin p5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin p6 {
+  font-size: 17px;
+  line-height: 22px;
+}
+
+@mixin p7 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin p8 {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+@mixin p9 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin p10 {
+  font-size: 13px;
+  line-height: 14px;
+}
+
+@mixin p11 {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+@mixin p12 {
+  font-size: 11px;
+  line-height: 16px;
+}
+
+@mixin p13 {
+  font-size: 10px;
+  line-height: 16px;
+}
+
+@mixin fontWeight ($weight) {
+  font-weight: $weight;
+}

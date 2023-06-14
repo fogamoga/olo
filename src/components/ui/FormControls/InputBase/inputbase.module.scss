@@ -1,0 +1,136 @@
+$componentPaddingLeft: 25px;
+$componentPaddingLeftWithAdornment: 15px;
+
+$componentPaddingRight: 18px;
+
+$borderWidth: 1.4px;
+$labelHeight: 28px;
+$helperTextHeight: 30px;
+
+.input {
+  $input: &;
+  border: none;
+  color: inherit;
+  outline: none !important;
+  background: inherit;
+  width: 100%;
+  font: inherit;
+  padding: 5px 6px;
+
+  &::placeholder {
+    color: var(--color-secondary-31);
+  }
+
+  &-component {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    &_hasLabel {
+      #{$input}::placeholder {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      #{$input}:focus::placeholder{
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      #{$input}__wrapper {
+        margin-top: 18px;
+      }
+    }
+
+    &_fullWidth {
+      width: 100%;
+    }
+
+    &:not(#{$input}-component_fullWidth) {
+      margin-right: 18px;
+    }
+
+    &_hidden {
+      display: none;
+    }
+
+    &_disabled {
+
+      & #{$input}__label,
+      & #{$input}__helperText,
+      & .input {
+        cursor: not-allowed;
+        color: var(--color-secondary-31) !important;
+
+        &::placeholder {
+          color: var(--color-secondary-31) !important;
+        }
+      }
+
+      & #{$input}__adornment {
+        color: var(--color-secondary-31);
+        svg {
+          color: inherit !important;
+        }
+      }
+    }
+
+    &_error {
+
+      & #{$input}__label,
+      & #{$input}__helperText {
+        color: var(--color-text-error) !important;
+      }
+
+    }
+
+    &#{$input}-component {
+      & #{$input}__label {
+        position: absolute;
+        pointer-events: none;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        top: -19px;
+        height: 12px;
+        font-size: 12px;
+      }
+    }
+
+    &#{$input}-component_empty:not(#{$input}-component_hasAdornment) {
+      & #{$input}__label {
+        color: var(--color-text-primary);
+        position: absolute;
+        pointer-events: none;
+        height: 100%;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        top: 0;
+        left: 0;
+        transition: all 0.2s ease-in-out;
+        font-size: inherit;
+
+        &_shrink {
+          transition: all 0.2s ease-in-out;
+          top: -19px;
+          height: 12px;
+          font-size: 12px;
+        }
+      }
+    }
+
+  }
+
+  &__label,
+  &__helperText {
+    display: inline-block;
+    padding-left: #{$componentPaddingLeft + 2};
+  }
+
+  &__label {
+    color: var(--color-secondary-grey);
+    margin-bottom: 7px;
+  }
+
+}

@@ -1,0 +1,21 @@
+@use "sass:map";
+
+$textAlignMap: (left, center, right);
+
+@mixin text-align() {
+  @each $value in $textAlignMap {
+    .text-align-#{$value} {
+      text-align: $value;
+    }
+  }
+}
+
+$verticalAlignMap: (baseline, bottom, middle, sub, super, text-bottom, text-top, top, inherit);
+
+@mixin vertical-align() {
+  @each $value in $verticalAlignMap {
+    .vertical-align-#{$value} {
+      vertical-align: $value;
+    }
+  }
+}

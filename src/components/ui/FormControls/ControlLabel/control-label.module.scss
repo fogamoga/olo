@@ -1,0 +1,63 @@
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  .root {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1.375em;
+    margin-bottom: 0;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      opacity: 0;
+
+      & + .label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        user-select: none;
+      }
+
+      & + .label_hasError{
+        color: var(--color-text-error)  !important;
+
+        &:before {
+          border-color: var(--color-text-error) !important;
+        }
+      }
+
+    }
+
+    input[type="checkbox"] {
+
+      & + .label:before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 2px solid var(--color-basic-primary-grey);
+        border-radius: 3px;
+        margin-right: 18px;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      &:checked + .label:before {
+        border-color: var(--color-basic-primary-blue);
+        background-color: var(--color-basic-primary-blue);
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4779 4.57088C13.4167 4.32731 13.1719 4.08373 12.9271 4.02284C12.6823 3.96194 12.4375 4.02284 12.2539 4.20552L10.5403 5.97146C9.13266 7.37203 8.15344 8.46813 6.37861 10.2341C5.7054 9.56422 5.15459 9.01617 4.60378 8.40723L3.80817 7.6156C3.56863 7.37203 3.37976 7.31113 3.13496 7.37203C2.82896 7.43292 2.64535 7.6156 2.52295 7.92008C2.46175 8.16365 2.52295 8.40723 2.70655 8.58991L4.23658 10.1732C4.72619 10.7212 5.27699 11.2084 5.8278 11.8173C6.02384 12 6.19501 12 6.37861 12C6.56222 12 6.74582 11.9391 6.86822 11.8173C6.92942 11.7564 6.99062 11.6955 7.05182 11.6346C7.11302 11.5737 7.17422 11.5128 7.23543 11.452L7.29663 11.3911C9.74467 8.89439 10.7851 7.85918 13.2331 5.30162C13.4779 5.11893 13.5391 4.81446 13.4779 4.57088Z' fill='white' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E");
+      }
+
+
+    }
+
+  }
+}
+

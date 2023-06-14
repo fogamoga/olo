@@ -1,0 +1,20 @@
+@import '../mixins/aligns';
+@import '../mixins/flex';
+
+.centered {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.display-flex {
+  display: flex
+}
+
+@include align-items;
+@include align-self;
+@include text-align;
+@include vertical-align;
+@include justify-content;
+@include flex-direction;
+@include flex-wrap;
+

@@ -1,0 +1,100 @@
+@use 'sass:map';
+@use 'sass:color';
+
+$networkColors: (
+  'vk': #3274bf,
+  'vk-hover': #377bc9,
+  'vk-ads': #1e78fd,
+  'vk-ads-hover': #3385ff,
+  'targetmail': #eef2f9,
+  'targetmail-hover': #f2f7ff,
+  'yd': #eef2f9,
+  'yd-hover': #f2f7ff,
+  'adsmarket': #3f73ae,
+  'adsmarket-hover': #467ebe,
+  'googleads': #19b05d,
+  'googleads-hover': #1eb964,
+  'pornhub': #5e5e5e,
+  'pornhub-hover': #656565,
+  'facebook': #436aba,
+  'facebook-hover': #4972c5,
+  'yahoo': #6001d2,
+  'yahoo-hover': #6a06e3,
+  'tiktok': #183051,
+  'tiktok-hover': #1b3a64,
+  'marketgid': #ebebeb,
+  'marketgid-hover': #dfdfdf,
+  'directadvert': #3383de,
+  'directadvert-hover': #3d8de7,
+  'gnezdo': #f1f1f1,
+  'gnezdo-hover': #dfdfdf,
+  'sape': #3d7098,
+  'sape-hover': #437aa5,
+  'zeropark': #171b79,
+  'zeropark-hover': #171b79,
+  'yandex-business': #323555,
+  'yandex-business-hover': #343758,
+  'yandex-zen': #000000,
+  'yandex-zen-hover': #212121,
+  'admitad': #7d34da,
+  'adsterra': #ebebeb,
+  'adsterra-hover': #dfdfdf,
+  'snapchat': #fffc00,
+  'snapchat-hover': #fff900,
+  'mytargetint': #da3831,
+  'mytargetint-hover': #e63d35,
+  'taboola': #18609f,
+  'taboola-hover': #1969ae,
+  'adgram': #2fa4f9,
+  'adgram-hover': #46aeff,
+  'otm': #ebebeb,
+  'otm-hover': #dfdfdf,
+  'getuniq': #1c84ff,
+  'account': #1c84ff,
+  'user_balance': #1c84ff,
+  'qiwi_bank_card': #4ac200,
+  'bank_card': #4ac200,
+  'qiwi_wallet': #ff8c00,
+  'lucky': #00c880,
+  'cashless': #1c84ff,
+  'tinkoff': #5e5e5e,
+  'capitalist': #8aba25
+);
+
+@mixin networksBg($map) {
+  :root {
+    @each $name, $value in $map {
+      --network-color-#{$name}: #{$value};
+
+      @if map.has-key($map, $name + '-hover') {
+      } @else {
+        --network-color-#{$name}-hover: #{darken($value, 10%)};
+      }
+
+      @if map.has-key($map, $name + '-active') {
+      } @else {
+        --network-color-#{$name}-active: #{darken($value, 14%)};
+      }
+    }
+  }
+
+  @each $name, $value in $map {
+    .bg-network-#{$name}-static {
+      background-color: var(--network-color-#{$name});
+    }
+
+    .bg-network-#{$name} {
+      background-color: var(--network-color-#{$name});
+
+      &:hover {
+        background-color: var(--network-color-#{$name}-hover);
+      }
+
+      &:active {
+        background-color: var(--network-color-#{$name}-active);
+      }
+    }
+  }
+}
+
+@include networksBg($networkColors);

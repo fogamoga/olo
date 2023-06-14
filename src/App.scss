@@ -1,0 +1,53 @@
+@import "palette";
+
+.center {
+  margin: 0 auto;
+  max-width: 1376px;
+}
+
+.h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 500;
+  padding-bottom: 32px;
+  margin-top: 0;
+}
+
+.constructor {
+
+  &__container {
+    min-width: 375px;
+    display: flex;
+    min-height: 400px;
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+
+}
+
+.flex {
+  display: flex;
+
+  &__justify-content {
+    &_space-between {
+      justify-content: space-between;
+    }
+  }
+
+  &__wrap_wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.add-button {
+  width: 100%;
+}
+
+.react-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}

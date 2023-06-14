@@ -1,0 +1,82 @@
+@use "sass:map";
+
+$alignMap: (
+        flex-start,
+        center,
+        flex-end,
+        stretch,
+        baseline
+);
+
+$alignSelfMap: (
+        center,
+        start,
+        end,
+        self-start,
+        self-end,
+        flex-start,
+        flex-end
+);
+
+$justifyMap: (
+        flex-start,
+        center,
+        flex-end,
+        space-between,
+        space-around,
+        space-evenly
+);
+
+$directionMap: (
+        row,
+        row-reverse,
+        column,
+        column-reverse
+);
+
+$flexWrapMap: (
+        nowrap,
+        wrap,
+        wrap-reverse,
+);
+
+@mixin align-items() {
+  @each $value in $alignMap {
+    .flex-align-#{$value} {
+      align-items: $value;
+    }
+  }
+}
+
+@mixin align-self() {
+  @each $value in $alignSelfMap {
+    .flex-align-self-#{$value} {
+      align-self: $value;
+    }
+  }
+}
+
+@mixin flex-direction() {
+  @each $value in $directionMap {
+    .flex-direction-#{$value} {
+      flex-direction: $value;
+    }
+  }
+}
+
+@mixin justify-content() {
+  @each $value in $justifyMap {
+    .flex-justify-#{$value} {
+      justify-content: $value;
+    }
+  }
+}
+
+
+@mixin flex-wrap() {
+  @each $value in $flexWrapMap {
+    .flex-wrap-#{$value} {
+      flex-wrap: $value;
+    }
+  }
+}

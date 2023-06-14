@@ -1,0 +1,43 @@
+.radio-input {
+  position: relative;
+  line-height: 0;
+
+  &_disabled {
+    color: var(--color-secondary-31);
+  }
+
+  &_checked {
+    color: var(--color-basic-primary-blue) !important;
+  }
+
+  &__control {
+    margin: 2px 4px;
+    color: inherit;
+    position: relative;
+    margin-right: 16px;
+    z-index: 1;
+    line-height: 0;
+    display: inline-block;
+  }
+
+  &__circle {
+
+  }
+
+  &__point {
+    top: 5px;
+    left: 5px;
+    position: absolute;
+  }
+
+  &__native-control {
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    left: 4px;
+    top: 8px;
+    opacity: 0;
+  }
+
+}

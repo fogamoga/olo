@@ -1,0 +1,24 @@
+@mixin styled-scrollbar() {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 0
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 0 0 0
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 8px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 1px
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: #E3E5E9
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #E3E5E9
+  }
+}

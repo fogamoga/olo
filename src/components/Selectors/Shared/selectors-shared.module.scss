@@ -1,0 +1,89 @@
+.selector-group {
+
+  &__container {
+    border: 1px solid #E0E0E0;
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    padding: 24px 24px 40px 24px;
+  }
+
+  &__title-container {
+    width: 180px;
+    margin-right: 38px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #444444;
+  }
+
+  &__description {
+    margin-top: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: #828282;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+
+.tile {
+  $r: &;
+
+  display: flex;
+  border: 2px solid #F2F2F2;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &__icon {
+    color: #BDBDBD;
+  }
+
+  &_checked {
+    background: white !important;
+    border-color: #EF2936 !important;
+
+    &::before {
+      top: -8px;
+      right: -6px;
+      position: absolute;
+      content: url('../../../assets/icons/checked.svg');
+    }
+
+    #{$r}__icon {
+      color: black;
+    }
+  }
+
+  &__title {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 19px;
+    font-style: normal;
+    color: #333333;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  &__description-link {
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #BDBDBD;
+  }
+
+}
+

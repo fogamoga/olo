@@ -1,0 +1,25 @@
+@import '../components/variables/breakpoints';
+
+@mixin media-min($breakpointName) {
+  @if (map.get($breakpoints, $breakpointName)) {
+    @media (min-width: map.get($breakpoints, $breakpointName)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpointName) {
+      @content;
+    }
+  }
+}
+
+@mixin media-max($breakpointName) {
+  @if (map.get($breakpoints, $breakpointName)) {
+    @media (max-width: map.get($breakpoints, $breakpointName)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpointName) {
+      @content;
+    }
+  }
+}

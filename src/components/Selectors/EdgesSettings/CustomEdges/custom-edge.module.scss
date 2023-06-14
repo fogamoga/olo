@@ -1,0 +1,32 @@
+.option-container {
+  width: 123px;
+}
+
+.edge-icon {
+  &-container {
+    background: var(--color-basic-primary-lightgrey);
+    border-radius: 4px;
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 6px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+
+  &-size {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BDBDBD;
+  }
+}
+
+.tile {
+  width: 123px;
+  height: 123px;
+}
