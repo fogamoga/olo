@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import sharedStyles from '../../Shared/selectors-shared.module.scss'
-import GroupTitle from '../../Shared/GroupTitle'
+import sharedStyles from '../../selectors-shared.module.scss'
+import GroupTitle from '../../../ui/GroupTitle'
 import clsx from 'clsx'
 import config from '../../../../config'
 import styles from '../../ColorSelector/colors.module.scss'
@@ -23,6 +23,7 @@ const SameEdges = () => {
   const edgeColors = useMemo(
     () => config.find(item => item.id === material.id)?.availableOpts.colors || [],
     [material])
+  
   const dispatch = useDispatch()
   
   useEffect(() => {

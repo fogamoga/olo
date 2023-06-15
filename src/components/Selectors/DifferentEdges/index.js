@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import sharedStyles from '../Shared/selectors-shared.module.scss'
-import Switcher from '../../Switcher'
+import sharedStyles from '../selectors-shared.module.scss'
 import clsx from 'clsx'
 import styles from './different-edges.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import Switcher from '../../ui/Switcher'
 
 const DifferentEdges = () => {
   const dispatch = useDispatch()

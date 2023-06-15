@@ -3,7 +3,7 @@ import styles from './popup.module.scss'
 import Select from '../../../../ui/FormControls/Select'
 import { useDispatch, useSelector } from 'react-redux'
 import clsx from 'clsx'
-import sharedStyles from '../../../Shared/selectors-shared.module.scss'
+import sharedStyles from '../../../selectors-shared.module.scss'
 
 const AVAILABLE_HEIGHTS = [0.4, 1, 2]
 
@@ -18,9 +18,7 @@ const Popup = ({onClose, edgeName, title, edgeColors}) => {
   
   const [edgeState, setEdgeState] = useState(edges[edgeName])
   
-  const edge = useMemo(()=>{
-    return edges[edgeName]
-  },[edges, edgeName])
+  const edge = useMemo(() => edges[edgeName],[edges, edgeName])
   
   useEffect(() => {
     setEdgeValue(edgeState)

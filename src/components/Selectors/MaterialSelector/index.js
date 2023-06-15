@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect } from 'react'
-import sharedStyles from '../Shared/selectors-shared.module.scss'
+import sharedStyles from '../selectors-shared.module.scss'
 import clsx from 'clsx'
 import config from '../../../config'
 import styles from './material.module.scss'
-import GroupTitle from '../Shared/GroupTitle'
+import GroupTitle from '../../ui/GroupTitle'
 import { useDispatch, useSelector } from 'react-redux'
 
 const MaterialSelector = () => {
@@ -21,12 +21,12 @@ const MaterialSelector = () => {
   }, [dispatch])
   
   useEffect(() => {
-    setMaterial({id: config[0].id, title: config[0].title})
+    setMaterial({ id: config[0].id, title: config[0].title })
   }, [])
   
   useEffect(() => {
     if (!material) {
-      setMaterial({id: config[0].id, title: config[0].title})
+      setMaterial({ id: config[0].id, title: config[0].title })
     }
   }, [material])
   
@@ -40,9 +40,10 @@ const MaterialSelector = () => {
       )
     }>
       {config.map(
-        ({ id, title, icon }, i) => <div key={'material-' + id}
-                                         className={styles.tile__title}
-                                         onClick={() => setMaterial({id, title})}>
+        ({ id, title, icon }, i) => <div
+          key={'material-' + id}
+          className={styles.tile__title}
+          onClick={() => setMaterial({ id, title })}>
           <div
             className={clsx(sharedStyles.tile, styles.tile, {
               [sharedStyles.tile_checked]: material && (material.id === id)

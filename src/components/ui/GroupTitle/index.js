@@ -1,5 +1,5 @@
 import React from 'react'
-import sharedStyles from '../selectors-shared.module.scss'
+import sharedStyles from '../../Selectors/selectors-shared.module.scss'
 
 const GroupTitle = ({title, description = null}) => {
   return (

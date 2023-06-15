@@ -7,8 +7,7 @@ import PropTypes from 'prop-types'
 import Icon from '../../Icon'
 import styles from '../form-controls.module.scss'
 import OutsideClickHandler from 'react-outside-click-handler'
-import Spinner from '../../Spinner'
-import useDebounce from '../../../utils/useDebounce'
+import useDebounce from '../../../../utils/useDebounce'
 
 const Select = ({
   variant = 'outlined',

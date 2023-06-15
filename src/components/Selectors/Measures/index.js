@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import sharedStyles from '../Shared/selectors-shared.module.scss'
-import GroupTitle from '../Shared/GroupTitle'
+import sharedStyles from '../selectors-shared.module.scss'
+import GroupTitle from '../../ui/GroupTitle'
 import clsx from 'clsx'
 import { useDispatch, useSelector } from 'react-redux'
 import config from '../../../config'
@@ -56,9 +56,7 @@ const Measures = () => {
     dispatch({ type: 'SET_DETAIL_VALUE', payload: { width: width, height: height, length: length, radius: radius } })
   },[width, height, length, radius])
   
-  const showRadiusSelect = useMemo(()=>{
-    return HAS_RADIUS_MEASURE.includes(detail.shape?.id)
-  },[detail.shape])
+  const showRadiusSelect = useMemo(() => HAS_RADIUS_MEASURE.includes(detail.shape?.id),[detail.shape])
   
   return (
     <div className={sharedStyles['selector-group__container']}>

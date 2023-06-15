@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo } from 'react'
-import sharedStyles from '../Shared/selectors-shared.module.scss'
-import GroupTitle from '../Shared/GroupTitle'
+import sharedStyles from '../selectors-shared.module.scss'
+import GroupTitle from '../../ui/GroupTitle'
 import clsx from 'clsx'
 import config from '../../../config'
 import styles from './colors.module.scss'

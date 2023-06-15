@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import sharedStyles from '../../Shared/selectors-shared.module.scss'
-import GroupTitle from '../../Shared/GroupTitle'
+import sharedStyles from '../../selectors-shared.module.scss'
 import Container from '../../../ui/Container'
 import clsx from 'clsx'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,6 +9,7 @@ import config from '../../../../config'
 import customEdgesStyles from './custom-edge.module.scss'
 import { createPortal } from 'react-dom'
 import Popup from './Popup'
+import GroupTitle from '../../../ui/GroupTitle'
 
 const AVAILABLE_HEIGHTS = [0.4, 1, 2]
 
@@ -28,6 +28,7 @@ const CustomEdges = () => {
   const edgeColors = useMemo(
     () => config.find(item => item.id === material.id)?.availableOpts.colors || [],
     [material])
+  
   const dispatch = useDispatch()
   
   useEffect(() => {

@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import Icon from '../../ui/Icon'
-import config from '../../../config'
 
 const OrderRow = ({
   material,

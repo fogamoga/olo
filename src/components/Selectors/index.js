@@ -8,6 +8,7 @@ import DifferentEdges from './DifferentEdges'
 import {SameEdges, CustomEdges} from './EdgesSettings'
 import Button from '../ui/Button'
 import config from '../../config'
+import sharedStyles from './selectors-shared.module.scss'
 
 const Selectors = () => {
   
@@ -19,18 +20,11 @@ const Selectors = () => {
     detail: state.detail
   }))
   
-  const availableSelector = useMemo(() => {
-    if (!detail.material) {
-      return []
-    }
-    
-    return Object.keys(
-      config.find(item => item.id === detail.material.id).availableOpts)
-  }, [detail])
+  const availableSelector = useMemo(() => (!detail.material)
+    ? []
+    : Object.keys(config.find(item => item.id === detail.material.id).availableOpts), [detail])
   
-  const addToOrderList = useCallback(() => {
-    dispatch({type: 'MOVE_TO_ORDER_LIST'})
-  },[dispatch])
+  const addToOrderList = useCallback(() => dispatch({type: 'MOVE_TO_ORDER_LIST'}),[dispatch])
   
   return (
     <div>
@@ -44,7 +38,9 @@ const Selectors = () => {
           { detail.customEdges ? <CustomEdges /> : <SameEdges />}
         </>
       }
-      <Button className="add-button" onClick={()=> addToOrderList()}>Добавить в заявку</Button>
+      <div className={sharedStyles['selector-group__container']}>
+        <Button className="add-button" onClick={()=> addToOrderList()}>Добавить в заявку</Button>
+      </div>
     </div>
   )
 }

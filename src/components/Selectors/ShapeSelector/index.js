@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useMemo } from 'react'
-import sharedStyles from '../Shared/selectors-shared.module.scss'
+import sharedStyles from '../selectors-shared.module.scss'
 import config from '../../../config'
 import styles from './shape-selecctor.module.scss'
 import clsx from 'clsx'
-import GroupTitle from '../Shared/GroupTitle'
+import GroupTitle from '../../ui/GroupTitle'
 import { useDispatch, useSelector } from 'react-redux'
 
 const ShapeSelector = () => {
