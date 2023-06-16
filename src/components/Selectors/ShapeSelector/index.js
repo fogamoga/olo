@@ -20,10 +20,10 @@ const ShapeSelector = () => {
   const dispatch = useDispatch()
   
   useEffect(() => {
-    setShape(shape || {id: shapes[0]?.id, title: shapes[0]?.title})
+    setShape(shape || {id: shapes[0]?.id, title: shapes[0]?.title })
   }, [shapes])
   
-  const setShape = useCallback(({id, title}) => {
+  const setShape = useCallback(({id, title, icon}) => {
     dispatch({ type: 'SET_DETAIL_VALUE', payload: { shape: {id, title} } })
   }, [])
   

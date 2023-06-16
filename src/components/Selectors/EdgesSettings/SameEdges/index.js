@@ -26,10 +26,7 @@ const SameEdges = () => {
   
   const dispatch = useDispatch()
   
-  useEffect(() => {
-    console.log(edgeState)
-    setEdgeValue(edgeState)
-  }, [edgeState])
+  useEffect(() => setEdgeValue(edgeState), [edgeState])
   
   useEffect(() => {
     const {id, title} = edgeColors[0]

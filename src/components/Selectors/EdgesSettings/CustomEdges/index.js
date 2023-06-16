@@ -36,26 +36,30 @@ const CustomEdges = () => {
   }, [edgesState])
   
   useEffect(() => {
+    const defaultColor =  {id: edgeColors[0].id, title: edgeColors[0].title}
+    
+    const defaultHeight = AVAILABLE_HEIGHTS[0]
+    
     setEdgesState(edges || {
       left: {
         title: 'Левая',
-        color: edgeColors[0].id,
-        height: AVAILABLE_HEIGHTS[0]
+        color: defaultColor,
+        height: defaultHeight
       },
       right: {
         title: 'Правая',
-        color: edgeColors[0].id,
-        height: AVAILABLE_HEIGHTS[0]
+        color: defaultColor,
+        height: defaultHeight
       },
       top: {
         title: 'Верхняя',
-        color: edgeColors[0].id,
-        height: AVAILABLE_HEIGHTS[0]
+        color: defaultColor,
+        height: defaultHeight
       },
       bottom: {
         title: 'Нижняя',
-        color: edgeColors[0].id,
-        height: AVAILABLE_HEIGHTS[0]
+        color: defaultColor,
+        height: defaultHeight
       }
     })
   }, [edgeColors])
@@ -98,7 +102,7 @@ const CustomEdges = () => {
               title={edgeName}>
               {
                 React.createElement(edgeColors.find(
-                    item => item.id === edges[edgeName].color).icon,
+                    item => item.id === edges[edgeName].color.id).icon,
                   {
                     className: styles.tile__icon
                   })

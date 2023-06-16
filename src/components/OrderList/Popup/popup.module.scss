@@ -18,7 +18,7 @@
   }
 
   &__content {
-    padding: 30px 34px;
+    padding: 48px 64px;
     background: #FFFFFF;
     border-bottom: 1px solid #E0E0E0;
     border-radius: 4px;
@@ -61,4 +61,17 @@
 
 .height-selector {
   margin-bottom: 24px;
+}
+
+.order-text {
+  background: var(--color-basic-primary-lightgrey);
+  padding: 24px;
+  border-radius: 4px;
+  max-height: 180px;
+  overflow-y: scroll;
+  margin-bottom: 1rem;
+}
+
+.order-item {
+  margin-bottom: 14px;
 }

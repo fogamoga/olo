@@ -7,7 +7,7 @@ import sharedStyles from '../../../selectors-shared.module.scss'
 
 const AVAILABLE_HEIGHTS = [0.4, 1, 2]
 
-const Popup = ({onClose, edgeName, title, edgeColors}) => {
+const EdgesPopup = ({onClose, edgeName, title, edgeColors}) => {
   const {
     edges,
   } = useSelector((state) => ({
@@ -57,15 +57,15 @@ const Popup = ({onClose, edgeName, title, edgeColors}) => {
           )
         }>
           {edgeColors && edgeColors.map(
-            ({ id, title, icon }, i) => <div
+            ({ id, title, icon }) => <div
               key={'edgeColor-' + id}
               className={styles['option-container']}
               onClick={() => setEdgeState({
-                ...edgeState, color: id
+                ...edgeState, color: {id, title}
               })}>
               <div
                 className={clsx(sharedStyles.tile, styles.tile, {
-                  [sharedStyles.tile_checked]: id === edge?.color
+                  [sharedStyles.tile_checked]: id === edge?.color.id
                 })}
                 title={title} id={id}>
                 {React.createElement(icon, { className: styles['tile__icon'] })}
@@ -79,4 +79,4 @@ const Popup = ({onClose, edgeName, title, edgeColors}) => {
   )
 }
 
-export default Popup
+export default EdgesPopup

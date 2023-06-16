@@ -10,17 +10,40 @@
   margin-bottom: 24px;
 }
 
-.table {
+.order-table {
   border-collapse: collapse;
   color: #333333;
+  margin-bottom: 17px;
 
   thead {
     color: #828282;
+
+    td {
+      font-size: 14px;
+    }
   }
 
   td {
     border-bottom: 2px solid #F8F8F8;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 33px;
+    padding-bottom: 33px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.order-row {
+  //&__shape-column,
+  //&__quantity-column {
+  //  text-align: center;
+  //}
+
+  &__shape-column {
+    width: 80px;
+    text-align: center;
+  }
+
+  &__remove-button {
+    cursor: pointer;
   }
 }

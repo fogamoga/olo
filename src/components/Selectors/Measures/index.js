@@ -96,7 +96,7 @@ const Measures = () => {
           <Select
             className={styles['select']}
             value={height}
-            label={'Высота, мм'}
+            label={'Толщина, мм'}
             emptyOptionLabel={'--Очистить--'}
             options={availableMeasuresValues.height.map(
               (val) => ({ value: val, label: ''+val }))}

@@ -28,7 +28,7 @@ const addToOrderList = (state) => {
   if (state.detail.customEdges) {
     edgesDetails = edgesDetails.concat(Object.keys(state.detail.edges).map((edgeName) => ({
       ...state.detail.edges[edgeName],
-      material: 'edge',
+      material: {id: 'edge', title: 'Кромка'},
       shape: edgeName,
       quantity: 1,
       id: uuidv4()
@@ -39,6 +39,7 @@ const addToOrderList = (state) => {
         ...state.detail.edge,
         material: { id: 'edge',  title: 'Кромка'},
         quantity: 4,
+        shape: 'edge',
         id: uuidv4()
       }])
     }
@@ -56,6 +57,29 @@ const addToOrderList = (state) => {
   }
 }
 
+const removeFromOrderList = (state, {payload}) => ({
+  ...state,
+  orderList: [...state.orderList.filter(item => item.id !== payload)]
+})
+
+const updateQuantityById = (state, {payload}) => ({
+  ...state,
+  orderList: [...state.orderList.map(item => {
+    if (item.id === payload.id) {
+      return {...item, quantity: payload.val}
+    } else {
+      return item
+    }
+  })]
+})
+
+const clearOrder = (state) => {
+  return {
+    detail: { ...blankDetail},
+    orderList: []
+  }
+}
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_DETAIL_VALUE':
@@ -64,6 +88,12 @@ const reducer = (state = initialState, action) => {
       return setCustomEdges(state, action)
     case 'MOVE_TO_ORDER_LIST':
       return addToOrderList(state)
+    case 'REMOVE_FROM_ORDERLIST':
+      return removeFromOrderList(state, action)
+    case 'UPDATE_QUANTITY_BY_ID':
+      return  updateQuantityById(state, action)
+    case 'CLEAR_ORDER':
+      return clearOrder(state, action)
     default:
       return state
   }
