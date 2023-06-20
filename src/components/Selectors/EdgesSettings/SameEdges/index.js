@@ -21,7 +21,7 @@ const SameEdges = () => {
   
   const [edgeState, setEdgeState] = useState(edge)
   const edgeColors = useMemo(
-    () => config.find(item => item.id === material.id)?.availableOpts.colors || [],
+    () => config.find(item => item.id === material.id)?.availableOpts.edgeColors || [],
     [material])
   
   const dispatch = useDispatch()
